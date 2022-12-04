@@ -1,0 +1,8 @@
+rb,x
+ra,x
+wb,x
+wa,x
+x,ra
+x,wa
+v,x
+x,v
