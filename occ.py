@@ -28,7 +28,6 @@ def validate(txList,validateList,txVal,txAmounts,txCache):
                 #check condition 1
                 if tx.finishTS > txVal.startTS : 
                     validOne = False 
-                    print('c1false')
                 #check condition 2
                 if (txVal.startTS < tx.finishTS) and (tx.finishTS < txVal.validateTS) : 
                     for write in tx.readWriteList :
@@ -36,7 +35,6 @@ def validate(txList,validateList,txVal,txAmounts,txCache):
                             #check if intersect exists
                             if (write[0]=="w" and read[0]=="r" and write[1]==read[1]) : 
                                 validTwo = False
-                                print('c2false')
                 
         if (validOne) or (validTwo):
             valid = True
